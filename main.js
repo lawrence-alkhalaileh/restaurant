@@ -1,39 +1,49 @@
 //  task 1 - question 1
 
-// let name = prompt("Enter your name");
+let info = [];
 
-// let gender;
+let name = prompt("Enter your name");
 
-// while (true) {
-//   gender = prompt("Enter gender");
-//   if (gender.toLowerCase() === "male" || gender.toLowerCase() === "female") {
-//     break;
-//   } else {
-//     alert("try again!");
-//   }
-// }
+info.push(name);
 
-// if (gender.toLowerCase() == "male") {
-//   alert(`hello mr.${name}`);
-// } else if (gender.toLowerCase() == "female") {
-//   alert(`hello ms.${name}`);
-// } else {
-//     alert("hello there !")
-// }
+let gender;
 
-// let order = prompt('do you want shawarma, zinger, burger?')
+while (true) {
+  gender = prompt("Enter gender");
+  if (gender.toLowerCase() === "male" || gender.toLowerCase() === "female") {
+    info.push(gender);
+    break;
+  } else {
+    alert("try again!");
+  }
+}
 
-// if(order.toLowerCase() == 'shawarma'){
-//     alert('preparing shawarma ...')
-// } else if (order.toLowerCase() == 'zinger'){
-//     alert('preparing zinger ...')
-// } else if (order.toLowerCase() == 'burger') {
-//     alert('preparing burger ...')
-// } else {
-//     alert('incorrect input, try again!')
-// }
+if (gender.toLowerCase() == "male") {
+  alert(`hello mr.${name}`);
+} else if (gender.toLowerCase() == "female") {
+  alert(`hello ms.${name}`);
+} else {
+  alert("hello there !");
+}
 
-// console.log(`name: ${name}, order: ${order}`)
+let order = prompt("do you want shawarma, zinger, burger?");
+
+if (order.toLowerCase() == "shawarma") {
+  alert("preparing shawarma ...");
+  info.push(order);
+} else if (order.toLowerCase() == "zinger") {
+  alert("preparing zinger ...");
+  info.push(order);
+} else if (order.toLowerCase() == "burger") {
+  alert("preparing burger ...");
+  info.push(order);
+} else {
+  alert("incorrect input, try again!");
+}
+console.log(info);
+
+
+// console.log(`name: ${name}, order: ${order}`);
 
 // task 1 - question 2
 
@@ -69,13 +79,13 @@
 
 //  task 2 - question 2
 
-// let numbers = "";
+// let numbers = "";dff
 // for (let i = 0; i <= 5; i++) {
 //   numbers += i + " ";
 // }
 // alert(numbers);
 
-//  task 2 - question 4
+// //  task 2 - question 4
 
 // let number = 0;
 // while (true) {
@@ -87,7 +97,7 @@
 //   }
 // }
 
-//  task 2 - question 5
+// //  task 2 - question 5
 
 // let x = Number(prompt("enter a number to display sum"));
 
