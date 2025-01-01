@@ -1,46 +1,58 @@
 //  task 1 - question 1
 
-let info = [];
+const info = [];
+const items = [];
 
-let name = prompt("Enter your name");
+let userName = prompt("Enter your Name please :");
+const parentElement = document.getElementById('parentDiv');
+const newParagraph = document.createElement('p');
+newParagraph.textContent = userName;
+parentElement.appendChild(newParagraph);
 
-info.push(name);
-
-let gender;
+info.push(userName);
+let Gender;
 
 while (true) {
-  gender = prompt("Enter gender");
-  if (gender.toLowerCase() === "male" || gender.toLowerCase() === "female") {
-    info.push(gender);
+  Gender = prompt("Enter Your Gender please:");
+  if (Gender === "male" || Gender === "female") {
     break;
   } else {
-    alert("try again!");
+    alert("Invalid input. Please enter 'male' or 'female'.");
   }
 }
-
-if (gender.toLowerCase() == "male") {
-  alert(`hello mr.${name}`);
-} else if (gender.toLowerCase() == "female") {
-  alert(`hello ms.${name}`);
-} else {
-  alert("hello there !");
+if (Gender === "male") {
+  items.push(Gender);
+  info.push(Gender);
+  alert(`Welcome, Mr. ${userName}!`);
+} else if (Gender === "female") {
+  info.push(Gender);
+  items.push(Gender);
+  alert(`Welcome, Ms. ${userName}!`);
 }
 
-let order = prompt("do you want shawarma, zinger, burger?");
+let orderChoice = prompt("Would you like to order shawarma, zinger, or burger");
 
-if (order.toLowerCase() == "shawarma") {
-  alert("preparing shawarma ...");
-  info.push(order);
-} else if (order.toLowerCase() == "zinger") {
-  alert("preparing zinger ...");
-  info.push(order);
-} else if (order.toLowerCase() == "burger") {
-  alert("preparing burger ...");
-  info.push(order);
-} else {
-  alert("incorrect input, try again!");
+items.push(orderChoice);
+info.push(orderChoice);
+alert(`Your ${orderChoice} is being prepared.`);
+
+
+  const orderedList = document.createElement('ol');
+
+
+  for (let i = 0; i < items.length; i++) {
+      const listItem = document.createElement('li'); // Create <li>
+      listItem.textContent = items[i]; // Set the text of the list item
+      orderedList.appendChild(listItem); // Add the <li> to the <ol>
+  }
+
+  document.getElementById('list-container').appendChild(orderedList);
+
+for (let i = 0; i < info.length; i++) {
+
+  console.log(info[i]);
+
 }
-console.log(info);
 
 
 // console.log(`name: ${name}, order: ${order}`);
