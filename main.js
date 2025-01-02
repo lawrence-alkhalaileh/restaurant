@@ -1,59 +1,16 @@
 //  task 1 - question 1
 
-const info = [];
-const items = [];
+document.getElementById("orderForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  let userName = document.getElementById("username").value;
+  let orderType = document.querySelector(
+    'input[name="orderType"]:checked'
+  ).value;
+  let combo = document.querySelector('input[name="order-type"]:checked').value;
 
-let userName = prompt("Enter your Name please :");
-const parentElement = document.getElementById('parentDiv');
-const newParagraph = document.createElement('p');
-newParagraph.textContent = userName;
-parentElement.appendChild(newParagraph);
-
-info.push(userName);
-let Gender;
-
-while (true) {
-  Gender = prompt("Enter Your Gender please:");
-  if (Gender === "male" || Gender === "female") {
-    break;
-  } else {
-    alert("Invalid input. Please enter 'male' or 'female'.");
-  }
-}
-if (Gender === "male") {
-  items.push(Gender);
-  info.push(Gender);
-  alert(`Welcome, Mr. ${userName}!`);
-} else if (Gender === "female") {
-  info.push(Gender);
-  items.push(Gender);
-  alert(`Welcome, Ms. ${userName}!`);
-}
-
-let orderChoice = prompt("Would you like to order shawarma, zinger, or burger");
-
-items.push(orderChoice);
-info.push(orderChoice);
-alert(`Your ${orderChoice} is being prepared.`);
-
-
-  const orderedList = document.createElement('ol');
-
-
-  for (let i = 0; i < items.length; i++) {
-      const listItem = document.createElement('li'); // Create <li>
-      listItem.textContent = items[i]; // Set the text of the list item
-      orderedList.appendChild(listItem); // Add the <li> to the <ol>
-  }
-
-  document.getElementById('list-container').appendChild(orderedList);
-
-for (let i = 0; i < info.length; i++) {
-
-  console.log(info[i]);
-
-}
-
+  let results = document.getElementById("results");
+  results.textContent = ` Hey ${userName}, your order ${orderType} - ${combo} is being prepared`;
+});
 
 // console.log(`name: ${name}, order: ${order}`);
 
